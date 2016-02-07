@@ -9,18 +9,17 @@
     <title>Registration App</title>
     <h:outputStylesheet library="css" name="style.css"/>
     <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
-
 </h:head>
 
 <h:body styleClass="body">
-    <h3>Click button</h3>
-    <h:panelGroup>
+    <h3>JSF Registration Application</h3>
 
-        <div class="divButton" align="center">
-            <h:button styleClass="button"  outcome="registration"/>
-        </div>
-
-    </h:panelGroup>
+    <div class="divRegisterForm">
+        <h:form styleClass="registerForm">
+            <h:outputLabel value="First Name" styleClass="firstNameOutputLabel"/>
+            <h:inputText styleClass="firstNameInputText"/>
+        </h:form>
+    </div>
 </h:body>
 
 </html>
