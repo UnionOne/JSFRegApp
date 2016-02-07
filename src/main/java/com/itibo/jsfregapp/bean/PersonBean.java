@@ -20,13 +20,8 @@ public class PersonBean implements Serializable {
     private String email;
     private Level level;
 
-    public String welcome(){
-        //check if null?
-        if("".equals(firstName) || firstName ==null){
-            return "";
-        }else{
-            return "Ajax message : Welcome " + firstName;
-        }
+    public Level[] getLevels() {
+        return Level.values();
     }
 
     public String getFirstName() {

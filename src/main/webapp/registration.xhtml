@@ -56,15 +56,25 @@
             <br/>
 
             <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label"/>
-                <h:inputText value="#{personBean.date}" styleClass="mdl-textfield__input"/>
+                <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
+                <h:inputText id="birth" value="#{personBean.date}" styleClass="mdl-textfield__input">
+                    <f:validateLength minimum="0" maximum="15"/>
+                    <f:validator validatorId="birthValidator"/>
+                    <f:ajax event="blur" execute="@this" render="birthError"/>
+                </h:inputText>
+                <h:message for="birth" id="birthError"/>
             </div>
 
             <br/>
 
             <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label"/>
-                <h:inputText value="#{personBean.email}" styleClass="mdl-textfield__input"/>
+                <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
+                <h:inputText id="email" value="#{personBean.email}" styleClass="mdl-textfield__input">
+                    <f:validateLength minimum="0" maximum="15"/>
+                    <f:validator validatorId="emailValidator"/>
+                    <f:ajax event="blur" execute="@this" render="emailError"/>
+                </h:inputText>
+                <h:message for="email" id="emailError"/>
             </div>
 
             <br/>
@@ -72,9 +82,7 @@
             <div class="levelPanel">
                 <h:outputLabel value="Service Level" styleClass="levelOutputLabel"/>
                 <h:selectOneMenu value="#{personBean.level}" styleClass="levelMenu">
-                    <f:selectItem itemValue="Basic" itemLabel="Basic"/>
-                    <f:selectItem itemValue="Medium" itemLabel="Medium"/>
-                    <f:selectItem itemValue="Premium" itemLabel="Premium"/>
+                    <f:selectItems value="#{personBean.levels}"/>
                 </h:selectOneMenu>
             </div>
 
