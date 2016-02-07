@@ -20,46 +20,74 @@
     <h3>JSF Registration Application</h3>
 
     <div class="divRegisterForm">
-        <h:form  styleClass="registerForm">
+        <h:form  styleClass="mdl-shadow--6dp">
             <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="First Name..." styleClass="mdl-textfield__label"/>
-                <h:inputText styleClass="mdl-textfield__input"/>
+                <h:outputLabel value="First Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
+                <h:inputText id="firstName" value="#{personBean.firstName}" styleClass="mdl-textfield__input">
+                    <f:validateLength minimum="0" maximum="15"/>
+                    <f:validator validatorId="firstNameValidator"/>
+                    <f:ajax event="blur" execute="@this" render="firstNameError"/>
+                </h:inputText>
+                <h:message for="firstName" id="firstNameError"/>
             </div>
 
+            <br/>
+
             <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label"/>
-                <h:inputText styleClass="mdl-textfield__input"/>
+                <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
+                <h:inputText id="lastName" value="#{personBean.lastName}" styleClass="mdl-textfield__input">
+                    <f:validateLength minimum="0" maximum="15"/>
+                    <f:validator validatorId="lastNameValidator"/>
+                    <f:ajax event="blur" execute="@this" render="lastNameError"/>
+                </h:inputText>
+                <h:message for="lastName" id="lastNameError"/>
             </div>
+
+            <br/>
 
             <div class="sexPanel">
                 <h:outputLabel value="Sex" styleClass="sexOutputLabel"/>
-                <h:selectOneRadio styleClass="sexRadioButton">
+                <h:selectOneRadio value="#{personBean.sex.name}" styleClass="sexRadioButton">
                     <f:selectItem itemValue="Male" itemLabel="Male"/>
                     <f:selectItem itemValue="Female" itemLabel="Female"/>
                 </h:selectOneRadio>
             </div>
 
+            <br/>
+
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label"/>
-                <h:inputText styleClass="mdl-textfield__input"/>
+                <h:inputText value="#{personBean.date}" styleClass="mdl-textfield__input"/>
             </div>
+
+            <br/>
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label"/>
-                <h:inputText styleClass="mdl-textfield__input"/>
+                <h:inputText value="#{personBean.email}" styleClass="mdl-textfield__input"/>
             </div>
+
+            <br/>
 
             <div class="levelPanel">
                 <h:outputLabel value="Service Level" styleClass="levelOutputLabel"/>
-                <h:selectOneMenu styleClass="levelMenu">
+                <h:selectOneMenu value="#{personBean.level}" styleClass="levelMenu">
                     <f:selectItem itemValue="Basic" itemLabel="Basic"/>
                     <f:selectItem itemValue="Medium" itemLabel="Medium"/>
                     <f:selectItem itemValue="Premium" itemLabel="Premium"/>
                 </h:selectOneMenu>
             </div>
 
-            <div class="divButton" align="center">
-                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"/>
+            <br/>
+
+            <div class="divButton">
+                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register" outcome="result"/>
+            </div>
+
+            <br/>
+
+            <div class="divButton">
+                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Back" outcome="index"/>
             </div>
 
         </h:form>

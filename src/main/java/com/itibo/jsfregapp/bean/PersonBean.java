@@ -20,6 +20,15 @@ public class PersonBean implements Serializable {
     private String email;
     private Level level;
 
+    public String welcome(){
+        //check if null?
+        if("".equals(firstName) || firstName ==null){
+            return "";
+        }else{
+            return "Ajax message : Welcome " + firstName;
+        }
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -66,17 +75,5 @@ public class PersonBean implements Serializable {
 
     public void setLevel(Level level) {
         this.level = level;
-    }
-
-    @Override
-    public String toString() {
-        return "PersonBean{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", sex=" + sex +
-                ", date='" + date + '\'' +
-                ", email='" + email + '\'' +
-                ", level=" + level +
-                '}';
     }
 }
