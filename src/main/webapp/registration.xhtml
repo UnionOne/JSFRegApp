@@ -7,24 +7,28 @@
 
 <h:head>
     <title>Registration App</title>
+
     <h:outputStylesheet library="css" name="style.css"/>
-    <h:outputStylesheet library="css" name="normalize.css"/>
+    <h:outputStylesheet library="css" name="fonts.css"/>
+    <h:outputStylesheet library="css" name="icons.css"/>
+    <h:outputStylesheet library="css" name="material.min.css"/>
     <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
+    <h:outputScript library="js" name="material.min.js"/>
 </h:head>
 
 <h:body styleClass="body">
     <h3>JSF Registration Application</h3>
 
     <div class="divRegisterForm">
-        <h:form styleClass="registerForm">
-            <div class="firstNamePanel">
-                <h:outputLabel value="First Name" styleClass="firstNameOutputLabel"/>
-                <h:inputText styleClass="firstNameInputText"/>
+        <h:form  styleClass="registerForm">
+            <div class="mdl-textfield mdl-js-textfield">
+                <h:outputLabel value="First Name..." styleClass="mdl-textfield__label"/>
+                <h:inputText styleClass="mdl-textfield__input"/>
             </div>
 
-            <div class="secondNamePanel">
-                <h:outputLabel value="Last Name" styleClass="lastNameOutputLabel"/>
-                <h:inputText styleClass="lastNameInputText"/>
+            <div class="mdl-textfield mdl-js-textfield">
+                <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label"/>
+                <h:inputText styleClass="mdl-textfield__input"/>
             </div>
 
             <div class="sexPanel">
@@ -35,14 +39,14 @@
                 </h:selectOneRadio>
             </div>
 
-            <div class="datePanel">
-                <h:outputLabel value="Date of Birth" styleClass="dateOutputLabel"/>
-                <h:inputText styleClass="dateInputText"/>
+            <div class="mdl-textfield mdl-js-textfield">
+                <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label"/>
+                <h:inputText styleClass="mdl-textfield__input"/>
             </div>
 
-            <div class="emailPanel">
-                <h:outputLabel value="Email Address" styleClass="emailOutputLabel"/>
-                <h:inputText styleClass="emailInputText"/>
+            <div class="mdl-textfield mdl-js-textfield">
+                <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label"/>
+                <h:inputText styleClass="mdl-textfield__input"/>
             </div>
 
             <div class="levelPanel">
@@ -52,6 +56,10 @@
                     <f:selectItem itemValue="Medium" itemLabel="Medium"/>
                     <f:selectItem itemValue="Premium" itemLabel="Premium"/>
                 </h:selectOneMenu>
+            </div>
+
+            <div class="divButton" align="center">
+                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"/>
             </div>
 
         </h:form>
