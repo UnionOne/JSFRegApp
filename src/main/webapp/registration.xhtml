@@ -8,6 +8,7 @@
 <h:head>
     <title>Registration App</title>
     <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputStylesheet library="css" name="normalize.css"/>
     <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
 </h:head>
 
@@ -16,8 +17,43 @@
 
     <div class="divRegisterForm">
         <h:form styleClass="registerForm">
-            <h:outputLabel value="First Name" styleClass="firstNameOutputLabel"/>
-            <h:inputText styleClass="firstNameInputText"/>
+            <div class="firstNamePanel">
+                <h:outputLabel value="First Name" styleClass="firstNameOutputLabel"/>
+                <h:inputText styleClass="firstNameInputText"/>
+            </div>
+
+            <div class="secondNamePanel">
+                <h:outputLabel value="Last Name" styleClass="lastNameOutputLabel"/>
+                <h:inputText styleClass="lastNameInputText"/>
+            </div>
+
+            <div class="sexPanel">
+                <h:outputLabel value="Sex" styleClass="sexOutputLabel"/>
+                <h:selectOneRadio styleClass="sexRadioButton">
+                    <f:selectItem itemValue="Male" itemLabel="Male"/>
+                    <f:selectItem itemValue="Female" itemLabel="Female"/>
+                </h:selectOneRadio>
+            </div>
+
+            <div class="datePanel">
+                <h:outputLabel value="Date of Birth" styleClass="dateOutputLabel"/>
+                <h:inputText styleClass="dateInputText"/>
+            </div>
+
+            <div class="emailPanel">
+                <h:outputLabel value="Email Address" styleClass="emailOutputLabel"/>
+                <h:inputText styleClass="emailInputText"/>
+            </div>
+
+            <div class="levelPanel">
+                <h:outputLabel value="Service Level" styleClass="levelOutputLabel"/>
+                <h:selectOneMenu styleClass="levelMenu">
+                    <f:selectItem itemValue="Basic" itemLabel="Basic"/>
+                    <f:selectItem itemValue="Medium" itemLabel="Medium"/>
+                    <f:selectItem itemValue="Premium" itemLabel="Premium"/>
+                </h:selectOneMenu>
+            </div>
+
         </h:form>
     </div>
 </h:body>

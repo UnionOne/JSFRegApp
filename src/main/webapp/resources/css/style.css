@@ -1,63 +1,124 @@
 
 /* Common styles */
 
+/** {
+    margin: 0;
+    padding: 0;
+}
+
 .body {
     background: url(#{resource['img/background.png']});
-}
+}*/
 
 .body h3 {
     text-decoration: underline;
     color: brown;
-    font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
     text-align: center;
-}
-
-/* Button on index.xhtml */
-
-.button {
-
-    display: inline-block;
-    margin: 40px;
-    width: 100px;
-    height: 100px;
-    background: url(#{resource['img/settings.png']}) center no-repeat;
-    cursor: pointer;
-
-    border-radius: 50%;
-
-    box-shadow: 0 3px 20px rgba(0,0,0,.25),
-                inset 0 2px 0 rgba(255,255,255,.4),
-                0 2px 0 rgba(0,0,0,.1), inset 0 0 20px rgba(0,0,0,.1);
-}
-
-.button:hover {
-    box-shadow: inset 0 0 20px rgba(0,0,0,.2),
-                0 2px 0 rgba(255,255,255,.4),
-                inset 0 2px 0 rgba(0,0,0,.1);
-}
-
-.button::after {
-    content: '';
-    width: 100px;
-    height: 100px;
-    display: block;
-    opacity: .7;
-}
-
-.button:hover::after {
-    background-position: center 52%;
+    margin-top: 2%;
 }
 
 /* Content on registration.xhtml */
 
 .divRegisterForm {
     text-align: center;
+    margin-top: 5%;
+    font: 1em 'Consolas', Arial, Helvetica, sans-serif;
 }
 
 .registerForm {
     border: 4px groove darkgreen ;
+    width: 50%;
+    margin-left: 25%;
+    background-color: beige;
+}
+
+/* First Name Panel */
+
+.firstNamePanel {
+    margin-top: 2%;
 }
 
 .firstNameInputText {
+    margin-left: 7%;
+    margin-right: 1%;
+}
+
+/* Second Name Panel */
+
+.secondNamePanel {
+    margin-top: 2%;
+}
+
+.lastNameOutputLabel {
+    margin-top: 10%;
+    margin-right: 10px;
+}
+
+.lastNameInputText {
+    margin-left: 7%;
+    margin-right: 1%;
+}
+
+/* Sex Panel */
+
+.sexPanel {
+    margin-top: 2%;
+}
+
+.sexOutputLabel {
+    margin-right: 31%;
+}
+
+.sexRadioButton {
+    margin-left: 49%;
+    margin-bottom: 6%;
+    height: 0%;
+}
+
+/* Date Panel */
+
+.datePanel {
+    margin-top: 2%;
+}
+
+.dateOutputLabel {
+    margin-top: 10%;
+    margin-right: -20px;
+}
+
+.dateInputText {
     margin-left: 5%;
+    margin-right: 1%;
+}
+
+/* Email Panel */
+
+.emailPanel {
+    margin-top: 2%;
+}
+
+.emailOutputLabel {
+    margin-top: 10%;
+    margin-right: -3px;
+}
+
+.emailInputText {
+    margin-left: 3%;
+    margin-right: 1%;
+}
+
+/* Level Panel */
+
+.levelPanel {
+    margin-top: 2%;
+}
+
+.levelOutputLabel {
+    margin-top: 10%;
+    margin-right: -25px;
+}
+
+.levelMenu {
+    margin-left: 24%;
+    margin-right: 1%;
 }
