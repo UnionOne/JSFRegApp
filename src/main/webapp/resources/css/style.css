@@ -24,6 +24,8 @@
     text-align: center;
     margin-top: 5%;
     font: 1em 'Consolas', Arial, Helvetica, sans-serif;
+    width: 50%;
+    margin-left: 25%;
 }
 
 .registerForm {
@@ -61,6 +63,6 @@
 }
 
 .levelMenu {
-    margin-left: 24%;
-    margin-right: 1%;
+    margin-left: 147px;
+    margin-right: 8px;
 }

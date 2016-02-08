@@ -3,7 +3,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:F="http://java.sun.com/jsf/core">
 
 <h:head>
     <title>Registration App</title>
@@ -20,12 +20,12 @@
     <h3>JSF Registration Application</h3>
 
     <div class="divRegisterForm">
-        <h:form  styleClass="mdl-shadow--6dp">
+        <h:form id="mainForm" styleClass="mdl-shadow--6dp">
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="First Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="firstName" value="#{personBean.firstName}" styleClass="mdl-textfield__input">
+                <h:inputText id="firstName" value="#{personBean.firstName}" validator="#{validator.firstNameValidation}"
+                             styleClass="mdl-textfield__input">
                     <f:validateLength minimum="0" maximum="15"/>
-                    <f:validator validatorId="firstNameValidator"/>
                     <f:ajax event="blur" execute="@this" render="firstNameError"/>
                 </h:inputText>
                 <h:message for="firstName" id="firstNameError"/>
@@ -35,9 +35,9 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="lastName" value="#{personBean.lastName}" styleClass="mdl-textfield__input">
+                <h:inputText id="lastName" value="#{personBean.lastName}" validator="#{validator.lastNameValidation}"
+                             styleClass="mdl-textfield__input">
                     <f:validateLength minimum="0" maximum="15"/>
-                    <f:validator validatorId="lastNameValidator"/>
                     <f:ajax event="blur" execute="@this" render="lastNameError"/>
                 </h:inputText>
                 <h:message for="lastName" id="lastNameError"/>
@@ -57,9 +57,9 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="birth" value="#{personBean.date}" styleClass="mdl-textfield__input">
+                <h:inputText id="birth" value="#{personBean.date}" validator="#{validator.birthValidation}"
+                             styleClass="mdl-textfield__input">
                     <f:validateLength minimum="0" maximum="15"/>
-                    <f:validator validatorId="birthValidator"/>
                     <f:ajax event="blur" execute="@this" render="birthError"/>
                 </h:inputText>
                 <h:message for="birth" id="birthError"/>
@@ -69,9 +69,9 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="email" value="#{personBean.email}" styleClass="mdl-textfield__input">
+                <h:inputText id="email" value="#{personBean.email}" validator="#{validator.emailValidation}"
+                             styleClass="mdl-textfield__input">
                     <f:validateLength minimum="0" maximum="15"/>
-                    <f:validator validatorId="emailValidator"/>
                     <f:ajax event="blur" execute="@this" render="emailError"/>
                 </h:inputText>
                 <h:message for="email" id="emailError"/>
@@ -79,7 +79,7 @@
 
             <br/>
 
-            <div class="levelPanel">
+            <div class="mdl-color--cyan-50">
                 <h:outputLabel value="Service Level" styleClass="levelOutputLabel"/>
                 <h:selectOneMenu value="#{personBean.level}" styleClass="levelMenu">
                     <f:selectItems value="#{personBean.levels}"/>
@@ -89,13 +89,15 @@
             <br/>
 
             <div class="divButton">
-                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register" outcome="result"/>
+                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"
+                          outcome="result"/>
             </div>
 
             <br/>
 
             <div class="divButton">
-                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Back" outcome="index"/>
+                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Back"
+                          outcome="index"/>
             </div>
 
         </h:form>

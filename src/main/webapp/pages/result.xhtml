@@ -18,45 +18,47 @@
 
 <h:body styleClass="body">
     <h3>Result</h3>
-    <h:form styleClass="mdl-shadow--6dp">
-        <ul class="demo-list-item mdl-list">
-            <li class="mdl-list__item">
+    <div class="divRegisterForm">
+        <h:form styleClass="mdl-shadow--6dp">
+            <ul class="demo-list-item mdl-list">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     First Name: #{personBean.firstName}
                 </span>
-            </li>
+                </li>
 
-            <li class="mdl-list__item">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     Last Name: #{personBean.lastName}
                 </span>
-            </li>
+                </li>
 
-            <li class="mdl-list__item">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     Sex: #{personBean.sex}
                 </span>
-            </li>
+                </li>
 
-            <li class="mdl-list__item">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     Date of Birth: #{personBean.date}
                 </span>
-            </li>
+                </li>
 
-            <li class="mdl-list__item">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     Email Address: #{personBean.email}
                 </span>
-            </li>
+                </li>
 
-            <li class="mdl-list__item">
+                <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     Service Level: #{personBean.level}
                 </span>
-            </li>
-        </ul>
-    </h:form>
+                </li>
+            </ul>
+        </h:form>
+    </div>
 </h:body>
 
 </html>
