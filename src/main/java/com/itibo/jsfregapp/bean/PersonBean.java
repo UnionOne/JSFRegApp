@@ -24,6 +24,10 @@ public class PersonBean implements Serializable {
         return Level.values();
     }
 
+    public Sex[] getSexes() {
+        return Sex.values();
+    }
+
     public String getFirstName() {
         return firstName;
     }

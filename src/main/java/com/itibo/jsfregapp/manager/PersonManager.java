@@ -1,26 +1,29 @@
 package com.itibo.jsfregapp.manager;
 
-/*import com.itibo.jsfregapp.gson.Serializer;
+import com.itibo.jsfregapp.bean.PersonBean;
+import com.itibo.jsfregapp.gson.Serializer;
 import com.itibo.jsfregapp.gson.SerializerImpl;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;*/
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by union on 06.02.2016.
  */
 
 public class PersonManager {
-    /*private List<Person> persons;
+    private List<PersonBean> persons;
     private Serializer serializer;
     private String dbPath;
 
     public PersonManager(String dbPath) {
-        this(new ArrayList<Person>(), new SerializerImpl(), dbPath);
+        this(new ArrayList<PersonBean>(), new SerializerImpl(), dbPath);
     }
 
-    public PersonManager(List<Person> persons, Serializer serializer, String dbPath) {
+    public PersonManager(List<PersonBean> persons, Serializer serializer, String dbPath) {
         this.persons = persons;
         this.serializer = serializer;
         this.dbPath = dbPath;
@@ -30,7 +33,7 @@ public class PersonManager {
         boolean isReaded = false;
 
         if (new File(dbPath).exists()) {
-            persons = Arrays.asList(serializer.Deserialize(dbPath, Person[].class));
+            persons = Arrays.asList(serializer.Deserialize(dbPath, PersonBean[].class));
             isReaded = true;
         } else {
             isReaded = false;
@@ -42,11 +45,11 @@ public class PersonManager {
         serializer.Serialize(persons.toArray(), dbPath);
     }
 
-    public List<Person> getPersons() {
+    public List<PersonBean> getPersons() {
         return persons;
     }
 
-    public void setPersons(List<Person> persons) {
+    public void setPersons(List<PersonBean> persons) {
         this.persons = persons;
     }
 
@@ -73,5 +76,5 @@ public class PersonManager {
                 ", serializer=" + serializer +
                 ", dbPath='" + dbPath + '\'' +
                 '}';
-    }*/
+    }
 }
