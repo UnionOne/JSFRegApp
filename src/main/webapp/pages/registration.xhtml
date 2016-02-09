@@ -23,9 +23,8 @@
         <h:form id="mainForm" styleClass="mdl-shadow--6dp">
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="First Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="firstName" value="#{personBean.firstName}" validator="#{validator.firstNameValidation}"
-                             styleClass="mdl-textfield__input">
-                    <f:validateLength minimum="0" maximum="15"/>
+                <h:inputText id="firstName" value="#{personBean.firstName}" styleClass="mdl-textfield__input">
+                    <f:validator validatorId="name"/>
                     <f:ajax event="blur" execute="@this" render="firstNameError"/>
                 </h:inputText>
                 <h:message for="firstName" id="firstNameError"/>
@@ -35,9 +34,8 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="lastName" value="#{personBean.lastName}" validator="#{validator.lastNameValidation}"
-                             styleClass="mdl-textfield__input">
-                    <f:validateLength minimum="0" maximum="15"/>
+                <h:inputText id="lastName" value="#{personBean.lastName}" styleClass="mdl-textfield__input">
+                    <f:validator validatorId="name"/>
                     <f:ajax event="blur" execute="@this" render="lastNameError"/>
                 </h:inputText>
                 <h:message for="lastName" id="lastNameError"/>
@@ -57,9 +55,8 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="birth" value="#{personBean.date}" validator="#{validator.birthValidation}"
-                             styleClass="mdl-textfield__input">
-                    <f:validateLength minimum="0" maximum="15"/>
+                <h:inputText id="birth" value="#{personBean.date}" styleClass="mdl-textfield__input">
+                    <f:validator validatorId="date"/>
                     <f:ajax event="blur" execute="@this" render="birthError"/>
                 </h:inputText>
                 <h:message for="birth" id="birthError"/>
@@ -69,9 +66,8 @@
 
             <div class="mdl-textfield mdl-js-textfield">
                 <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="email" value="#{personBean.email}" validator="#{validator.emailValidation}"
-                             styleClass="mdl-textfield__input">
-                    <f:validateLength minimum="0" maximum="15"/>
+                <h:inputText id="email" value="#{personBean.email}" styleClass="mdl-textfield__input">
+                    <f:validator validatorId="email"/>
                     <f:ajax event="blur" execute="@this" render="emailError"/>
                 </h:inputText>
                 <h:message for="email" id="emailError"/>
