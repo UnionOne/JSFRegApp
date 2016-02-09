@@ -47,7 +47,7 @@
 
             <div class="sexPanel">
                 <h:outputLabel value="Sex" styleClass="sexOutputLabel"/>
-                <h:selectOneRadio value="#{personBean.sex.name}" styleClass="sexRadioButton">
+                <h:selectOneRadio value="#{personBean.sex}" styleClass="sexRadioButton">
                     <f:selectItem itemValue="Male" itemLabel="Male"/>
                     <f:selectItem itemValue="Female" itemLabel="Female"/>
                 </h:selectOneRadio>
@@ -89,8 +89,8 @@
             <br/>
 
             <div class="divButton">
-                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"
-                          outcome="result"/>
+                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"
+                          action="result"/>
             </div>
 
             <br/>
