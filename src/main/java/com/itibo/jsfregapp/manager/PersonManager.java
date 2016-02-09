@@ -69,6 +69,7 @@ public class PersonManager {
         this.dbPath = dbPath;
     }
 
+
     @Override
     public String toString() {
         return "PersonManager{" +

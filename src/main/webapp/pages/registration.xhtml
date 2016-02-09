@@ -85,9 +85,15 @@
 
             <div class="divButton">
                 <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                                 value="Register" action="result">
-                    <f:ajax execute="firstName lastName birth email sex level"/>
+                                 value="Register" action="#{personBean.addUser(personBean)}">
                 </h:commandButton>
+            </div>
+
+            <br/>
+
+            <div class="divButton">
+                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                 value="Result" action="result"/>
             </div>
 
             <br/>
