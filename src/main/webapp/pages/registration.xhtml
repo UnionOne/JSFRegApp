@@ -3,15 +3,15 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:F="http://java.sun.com/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:F="http://java.sun.com/jsf/core">
 
 <h:head>
     <title>Registration App</title>
-
+    <link type="text/css" rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic"/>
     <h:outputStylesheet library="css" name="style.css"/>
-    <h:outputStylesheet library="css" name="fonts.css"/>
-    <h:outputStylesheet library="css" name="icons.css"/>
-    <h:outputStylesheet library="css" name="material.min.css"/>
     <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
     <h:outputScript library="js" name="material.min.js"/>
 </h:head>
@@ -85,8 +85,9 @@
             <br/>
 
             <div class="divButton">
-                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Register"
-                          action="result"/>
+                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                 value="Register"
+                                 action="result"/>
             </div>
 
             <br/>
