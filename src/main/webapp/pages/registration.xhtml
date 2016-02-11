@@ -18,50 +18,56 @@
         <h:panelGrid columns="3">
 
             <h:outputLabel value="First Name" style="color: black"/>
-            <h:inputText id="firstName" value="#{personBean.firstName}" size="20" required="true" requiredMessage="Empty">
+            <h:inputText id="firstName" value="#{personBean.personModel.firstName}" size="20" required="true" requiredMessage="Empty">
                 <f:validator validatorId="name"/>
                 <f:ajax event="blur" execute="@this" render="firstNameError"/>
             </h:inputText>
             <h:message for="firstName" id="firstNameError" style="color: red"/>
 
             <h:outputLabel value="Last Name" style="color: black"/>
-            <h:inputText id="lastName" value="#{personBean.lastName}" size="20" required="true" requiredMessage="Empty">
+            <h:inputText id="lastName" value="#{personBean.personModel.lastName}" size="20" required="true" requiredMessage="Empty">
                 <f:validator validatorId="name"/>
                 <f:ajax event="blur" execute="@this" render="lastNameError"/>
             </h:inputText>
             <h:message for="lastName" id="lastNameError" style="color: red"/>
 
             <h:outputLabel value="Sex" styleClass="sexOutputLabel" style="color: black"/>
-            <h:selectOneRadio id="sex" value="#{personBean.sex}" styleClass="sexRadioButton" required="true" requiredMessage="Empty">
-                <f:selectItems value="#{personBean.sexes}"/>
+            <h:selectOneRadio id="sex" value="#{personBean.personModel.sex}" styleClass="sexRadioButton" required="true" requiredMessage="Empty">
+                <f:selectItems value="#{personBean.personModel.sexes}"/>
             </h:selectOneRadio>
 
             <br/>
 
             <h:outputLabel value="Date of Birth" style="color: black"/>
-            <h:inputText id="birth" value="#{personBean.date}" size="20" required="true" requiredMessage="Empty">
+            <h:inputText id="birth" value="#{personBean.personModel.date}" size="20" required="true" requiredMessage="Empty">
                 <f:validator validatorId="date"/>
                 <f:ajax event="blur" execute="@this" render="birthError"/>
             </h:inputText>
             <h:message for="birth" id="birthError" style="color: red"/>
 
             <h:outputLabel value="Email Address" style="color: black"/>
-            <h:inputText id="email" value="#{personBean.email}" size="20" required="true" requiredMessage="Empty">
+            <h:inputText id="email" value="#{personBean.personModel.email}" size="20" required="true" requiredMessage="Empty">
                 <f:validator validatorId="email"/>
                 <f:ajax event="blur" execute="@this" render="emailError"/>
             </h:inputText>
             <h:message for="email" id="emailError" style="color: red"/>
 
             <h:outputLabel value="Service Level" style="color: black"/>
-            <h:selectOneMenu id="level" value="#{personBean.level}" styleClass="levelMenu">
-                <f:selectItems value="#{personBean.levels}"/>
+            <h:selectOneMenu id="level" value="#{personBean.personModel.level}" styleClass="levelMenu">
+                <f:selectItems value="#{personBean.personModel.levels}"/>
             </h:selectOneMenu>
 
         </h:panelGrid>
 
-        <h:commandButton value="Register" action="#{personBean.addUser}"/>
+        <h:commandButton value="Register" action="#{personBean.addUser}">
+            <f:ajax render="outputUsers" execute="level"/>
+        </h:commandButton>
 
         <h:button value="Back" outcome="index"/>
+
+        <br/>
+
+        <h:outputText id="outputUsers" value="#{personBean.persons}" styleClass="result"/>
 
     </h:form>
 </h:body>
