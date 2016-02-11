@@ -1,14 +1,13 @@
 
 /* Common styles */
 
-/** {
+. {
     margin: 0;
     padding: 0;
-}*/
+}
 
 .body {
     background: url(#{resource['img/background.png']});
-    text-align: center;
 }
 
 .body h3 {
@@ -18,51 +17,6 @@
     margin-top: 2%;
 }
 
-/* Content on registration.xhtml */
-
-.divRegisterForm {
+.clickButton {
     text-align: center;
-    margin-top: 5%;
-    font: 1em 'Consolas', Arial, Helvetica, sans-serif;
-    width: 50%;
-    margin-left: 25%;
-}
-
-.registerForm {
-    border: 4px groove darkgreen ;
-    width: 50%;
-    margin-left: 25%;
-    background-color: beige;
-}
-
-/* Sex Panel */
-
-.sexPanel {
-    margin-top: 2%;
-}
-
-.sexOutputLabel {
-    margin-right: 31%;
-}
-
-.sexRadioButton {
-    margin-left: 49%;
-    margin-bottom: 6%;
-    height: 0%;
-}
-
-/* Level Panel */
-
-.levelPanel {
-    margin-top: 2%;
-}
-
-.levelOutputLabel {
-    margin-top: 10%;
-    margin-right: -25px;
-}
-
-.levelMenu {
-    margin-left: 147px;
-    margin-right: 8px;
 }

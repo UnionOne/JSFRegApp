@@ -8,24 +8,18 @@
 <h:head>
     <title>Registration App</title>
     <h:outputStylesheet library="css" name="style.css"/>
-    <h:outputStylesheet library="css" name="fonts.css"/>
-    <h:outputStylesheet library="css" name="icons.css"/>
-    <h:outputStylesheet library="css" name="material.min.css"/>
-    <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
-    <h:outputScript library="js" name="material.min.js"/>
 
 </h:head>
 
 <h:body styleClass="body">
     <h3>Click button</h3>
+
     <h:panelGroup>
-
-        <div class="divButton" align="center">
-            <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Button"
-                      outcome="registration"/>
+        <div class="clickButton">
+            <h:button value="Button" outcome="registration"/>
         </div>
-
     </h:panelGroup>
+
 </h:body>
 
 </html>

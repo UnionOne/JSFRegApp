@@ -1,14 +1,11 @@
 package com.itibo.jsfregapp.bean;
 
-import com.itibo.jsfregapp.manager.PersonManager;
+import com.itibo.jsfregapp.enums.Level;
+import com.itibo.jsfregapp.enums.Sex;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by union on 06.02.2016.
@@ -39,20 +36,8 @@ public class PersonBean implements Serializable {
         this.level = level;
     }
 
-    public void addUser(PersonBean personBean) throws IOException {
-        List<PersonBean> persons = new ArrayList<>();
-
-        persons.add(personBean);
-
-        final String dbPath = "example.json";
-        PersonManager manager = new PersonManager(dbPath);
-
-        if (!manager.readBase()) {
-            manager.setPersons(persons);
-            manager.setDbPath(dbPath);
-        }
-
-        System.out.println(persons.toString());
+    public void addUser() {
+        System.out.println("Tipa dobavil");
     }
 
     public Level[] getLevels() {

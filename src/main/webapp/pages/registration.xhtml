@@ -8,103 +8,62 @@
 
 <h:head>
     <title>Registration App</title>
-    <link type="text/css" rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css"/>
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic"/>
     <h:outputStylesheet library="css" name="style.css"/>
-    <h:outputScript library="js" name="jquery-1.4.3.min.js"/>
-    <h:outputScript library="js" name="material.min.js"/>
 </h:head>
 
 <h:body styleClass="body">
     <h3>JSF Registration Application</h3>
+    <h:form>
 
-    <div class="divRegisterForm">
-        <h:form id="mainForm" styleClass="mdl-shadow--6dp">
-            <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="First Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="firstName" value="#{personBean.firstName}" styleClass="mdl-textfield__input">
-                    <f:validator validatorId="name"/>
-                    <f:ajax event="blur" execute="@this" render="firstNameError"/>
-                </h:inputText>
-                <h:message for="firstName" id="firstNameError"/>
-            </div>
+        <h:panelGrid columns="3">
 
-            <br/>
+            <h:outputLabel value="First Name" style="color: black"/>
+            <h:inputText id="firstName" value="#{personBean.firstName}" size="20" required="true" requiredMessage="Empty">
+                <f:validator validatorId="name"/>
+                <f:ajax event="blur" execute="@this" render="firstNameError"/>
+            </h:inputText>
+            <h:message for="firstName" id="firstNameError" style="color: red"/>
 
-            <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Last Name..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="lastName" value="#{personBean.lastName}" styleClass="mdl-textfield__input">
-                    <f:validator validatorId="name"/>
-                    <f:ajax event="blur" execute="@this" render="lastNameError"/>
-                </h:inputText>
-                <h:message for="lastName" id="lastNameError"/>
-            </div>
+            <h:outputLabel value="Last Name" style="color: black"/>
+            <h:inputText id="lastName" value="#{personBean.lastName}" size="20" required="true" requiredMessage="Empty">
+                <f:validator validatorId="name"/>
+                <f:ajax event="blur" execute="@this" render="lastNameError"/>
+            </h:inputText>
+            <h:message for="lastName" id="lastNameError" style="color: red"/>
 
-            <br/>
-
-            <div class="sexPanel">
-                <h:outputLabel value="Sex" styleClass="sexOutputLabel"/>
-                <h:selectOneRadio id="sex" value="#{personBean.sex}" styleClass="sexRadioButton">
-                    <f:selectItems value="#{personBean.sexes}"/>
-                </h:selectOneRadio>
-            </div>
+            <h:outputLabel value="Sex" styleClass="sexOutputLabel" style="color: black"/>
+            <h:selectOneRadio id="sex" value="#{personBean.sex}" styleClass="sexRadioButton" required="true" requiredMessage="Empty">
+                <f:selectItems value="#{personBean.sexes}"/>
+            </h:selectOneRadio>
 
             <br/>
 
-            <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Date of Birth..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="birth" value="#{personBean.date}" styleClass="mdl-textfield__input">
-                    <f:validator validatorId="date"/>
-                    <f:ajax event="blur" execute="@this" render="birthError"/>
-                </h:inputText>
-                <h:message for="birth" id="birthError"/>
-            </div>
+            <h:outputLabel value="Date of Birth" style="color: black"/>
+            <h:inputText id="birth" value="#{personBean.date}" size="20" required="true" requiredMessage="Empty">
+                <f:validator validatorId="date"/>
+                <f:ajax event="blur" execute="@this" render="birthError"/>
+            </h:inputText>
+            <h:message for="birth" id="birthError" style="color: red"/>
 
-            <br/>
+            <h:outputLabel value="Email Address" style="color: black"/>
+            <h:inputText id="email" value="#{personBean.email}" size="20" required="true" requiredMessage="Empty">
+                <f:validator validatorId="email"/>
+                <f:ajax event="blur" execute="@this" render="emailError"/>
+            </h:inputText>
+            <h:message for="email" id="emailError" style="color: red"/>
 
-            <div class="mdl-textfield mdl-js-textfield">
-                <h:outputLabel value="Email Address..." styleClass="mdl-textfield__label" style="color: #00b0ff"/>
-                <h:inputText id="email" value="#{personBean.email}" styleClass="mdl-textfield__input">
-                    <f:validator validatorId="email"/>
-                    <f:ajax event="blur" execute="@this" render="emailError"/>
-                </h:inputText>
-                <h:message for="email" id="emailError"/>
-            </div>
+            <h:outputLabel value="Service Level" style="color: black"/>
+            <h:selectOneMenu id="level" value="#{personBean.level}" styleClass="levelMenu">
+                <f:selectItems value="#{personBean.levels}"/>
+            </h:selectOneMenu>
 
-            <br/>
+        </h:panelGrid>
 
-            <div class="mdl-color--cyan-50">
-                <h:outputLabel value="Service Level" styleClass="levelOutputLabel"/>
-                <h:selectOneMenu id="level" value="#{personBean.level}" styleClass="levelMenu">
-                    <f:selectItems value="#{personBean.levels}"/>
-                </h:selectOneMenu>
-            </div>
+        <h:commandButton value="Register" action="#{personBean.addUser}"/>
 
-            <br/>
+        <h:button value="Back" outcome="index"/>
 
-            <div class="divButton">
-                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                                 value="Register" action="#{personBean.addUser(personBean)}">
-                </h:commandButton>
-            </div>
-
-            <br/>
-
-            <div class="divButton">
-                <h:commandButton styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                                 value="Result" action="result"/>
-            </div>
-
-            <br/>
-
-            <div class="divButton">
-                <h:button styleClass="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" value="Back"
-                          outcome="index"/>
-            </div>
-
-        </h:form>
-    </div>
+    </h:form>
 </h:body>
 
 </html>

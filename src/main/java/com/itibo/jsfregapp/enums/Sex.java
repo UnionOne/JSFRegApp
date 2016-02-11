@@ -1,4 +1,4 @@
-package com.itibo.jsfregapp.bean;
+package com.itibo.jsfregapp.enums;
 
 /**
  * Created by union on 06.02.2016.
