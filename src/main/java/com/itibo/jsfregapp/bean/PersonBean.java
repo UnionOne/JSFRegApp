@@ -34,20 +34,25 @@ public class PersonBean implements Serializable {
     }
 
     public void addUser() {
-        this.persons.add(this.personModel);
+        this.persons.add(new PersonModel(this.personModel.getFirstName(), this.personModel.getLastName(),
+                this.personModel.getSex(), this.personModel.getDate(), this.personModel.getEmail(),
+                this.personModel.getLevel()));
     }
 
     public String getPersons() {
-        return persons.toString();
+        String result = "";
+        for (PersonModel personModel : persons) {
+            result += personModel.getPersonModel();
+            result += "\n\n";
+        }
+        return result;
     }
 
     @Override
     public String toString() {
-        String result = "";
-        for (PersonModel personModel : persons) {
-            result += personModel;
-            result += "\n\n";
-        }
-        return result;
+        return "PersonBean{" +
+                "persons=" + persons +
+                ", personModel=" + personModel +
+                '}';
     }
 }

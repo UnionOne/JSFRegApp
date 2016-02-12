@@ -60,14 +60,14 @@
         </h:panelGrid>
 
         <h:commandButton value="Register" action="#{personBean.addUser}">
-            <f:ajax render="outputUsers" execute="level"/>
+            <f:ajax render="outputUsers" execute="level sex email birth firstName lastName"/>
         </h:commandButton>
 
         <h:button value="Back" outcome="index"/>
 
         <br/>
 
-        <h:outputText id="outputUsers" value="#{personBean.persons}" styleClass="result"/>
+        <h:outputLabel id="outputUsers" value="#{personBean.persons}" escape="false"/>
 
     </h:form>
 </h:body>

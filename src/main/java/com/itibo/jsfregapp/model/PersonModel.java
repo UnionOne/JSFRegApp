@@ -83,6 +83,15 @@ public class PersonModel {
         this.level = level;
     }
 
+    public String getPersonModel() {
+        return "\nFirst Name: " + firstName +
+                "\nLast Name: " + lastName +
+                "\nSex: " + sex +
+                "\nDate: " + date +
+                "\nEmail: " + email +
+                "\nLevel: " + level;
+    }
+
     @Override
     public String toString() {
         return "PersonModel{" +
